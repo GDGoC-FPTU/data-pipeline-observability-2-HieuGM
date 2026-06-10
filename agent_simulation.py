@@ -1,4 +1,8 @@
 import pandas as pd
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent
 
 def simulate_agent_response(query, data_path):
     """
@@ -25,8 +29,8 @@ def simulate_agent_response(query, data_path):
 if __name__ == "__main__":
     # Test with Clean Data
     print("Testing with CLEAN data:")
-    print(simulate_agent_response("What is the best electronic product?", "../exercise-etl-automation/solution-code/processed_data.csv"))
+    print(simulate_agent_response("What is the best electronic product?", BASE_DIR / "processed_data.csv"))
     
     # Test with Garbage Data (to be created by students)
     print("\nTesting with GARBAGE data:")
-    print(simulate_agent_response("What is the best electronic product?", "garbage_data.csv"))
+    print(simulate_agent_response("What is the best electronic product?", BASE_DIR / "garbage_data.csv"))
